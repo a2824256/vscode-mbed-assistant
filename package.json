@@ -1,0 +1,55 @@
+{
+    "name": "mbed-cli-assistant",
+    "displayName": "Mbed-CLI-Assistant",
+    "description": "Visual Studio Code extention for Mbed-CLI.",
+    "version": "0.0.1",
+    "publisher": "AlexLeung&LiZeng",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "icon": "images/compile.png",
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.mbed.start"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.mbed.start",
+                "title": "MBED-CLI: Start"
+            },
+            {
+                "command": "extension.mbed.compile",
+                "title": "MBED-CLI: Compile"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "VS Code mbed configuration",
+            "properties": {
+                
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "dependencies": {
+        "spawn-command": "^0.0.2-1"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42",
+        "spawn-command": "^0.0.2-1"
+    }
+}
