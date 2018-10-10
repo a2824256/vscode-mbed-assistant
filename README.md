@@ -1,0 +1,2 @@
+# vscode-mbed-assistant
+一个macOS系统下的VScode插件，用于在macOS环境下编译mbed平台二进制文件
